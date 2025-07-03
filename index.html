@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect with Vimal Press</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px 15px;
+      animation: fadeIn 1s ease-in-out;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .logo-container {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      animation: popIn 1s ease-in-out;
+    }
+
+    .logo-container img {
+      height: 70px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.1) rotate(2deg);
+    }
+
+    @keyframes popIn {
+      0% { transform: translateY(-20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      margin: 10px 0 30px;
+      font-size: 2rem;
+      font-weight: 600;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+      animation: slideIn 1.2s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      max-width: 700px;
+      animation: fadeInIcons 1.4s ease-in-out;
+    }
+
+    @keyframes fadeInIcons {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .icons a {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 18px;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    .icons a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.15) rotate(5deg);
+      color: #00ffc3;
+      box-shadow: 0 8px 25px rgba(0,255,195,0.4);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ddd;
+      opacity: 0.8;
+    }
+
+    @media(max-width: 600px) {
+      .logo-container img {
+        height: 55px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .icons a {
+        font-size: 1.5rem;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-container">
+    <img src="vimalpress-logo.png" alt="Vimal Press Logo" />
+    <img src="vprint-logo.png" alt="VPrint Logo" />
+  </div>
+
+  <h1>Connect with Vimal Press</h1>
+
+  <div class="icons">
+    <a href="https://facebook.com/vimalpressmtr" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/vimalpress" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com/vimal.press" target="_blank" title="Instagram - Vimal Press"><i class="fab fa-instagram"></i></a>
+    <a href="https://instagram.com/v.printt" target="_blank" title="Instagram - VPrint"><i class="fab fa-instagram"></i></a>
+    <a href="https://instagram.com/v.honour__" target="_blank" title="Instagram - VHonour"><i class="fab fa-instagram"></i></a>
+    <a href="https://linkedin.com/in/vimalpress" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://wa.me/9084085855" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://youtube.com/vimalpress" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="mailto:vimalpress@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <footer>© 2025 Vimal Press | #VPrint #VHonour</footer>
+
+</body>
+</html>
+55
