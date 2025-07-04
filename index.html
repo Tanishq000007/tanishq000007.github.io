@@ -3,69 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Connect with Vimal Press</title>
+  <title>Let's Connect - Vimal Press</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
       font-family: 'Poppins', sans-serif;
+      background: #000000;
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 30px 15px;
-      animation: fadeIn 1s ease-in-out;
       text-align: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .logo-container {
+    .welcome-overlay {
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
       display: flex;
-      gap: 20px;
       align-items: center;
       justify-content: center;
-      margin-bottom: 25px;
-      flex-wrap: wrap;
-      animation: popIn 1s ease-in-out;
+      flex-direction: column;
+      color: gold;
+      animation: snapAway 1.2s ease-in-out 3s forwards;
     }
 
-    .logo-container img {
-      height: 70px;
+    .welcome-overlay img {
+      height: 100px;
+      margin-bottom: 20px;
+      animation: pulse 2s ease infinite;
+    }
+
+    .welcome-overlay h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      animation: zoomIn 1.5s ease;
+    }
+
+    .welcome-overlay p {
+      font-size: 1rem;
+      color: #ccc;
+      animation: fadeInUp 2s ease;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes snapAway {
+      0% { opacity: 1; filter: blur(0); transform: scale(1); }
+      100% { opacity: 0; filter: blur(8px); transform: scale(1.2); visibility: hidden; }
+    }
+
+    .logo-top {
+      margin: 100px auto 30px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .logo-top img {
+      height: 100px;
+      filter: drop-shadow(0 0 20px gold);
+      animation: float 3s ease-in-out infinite;
       transition: transform 0.3s ease;
     }
 
-    .logo-container img:hover {
-      transform: scale(1.1) rotate(2deg);
-    }
-
-    @keyframes popIn {
-      0% { transform: translateY(-20px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+    .logo-top img:hover {
+      transform: scale(1.1) rotate(3deg);
     }
 
     h1 {
-      margin: 10px 0 30px;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 600;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-      animation: slideIn 1.2s ease-in-out;
-    }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      margin-bottom: 25px;
+      color: #f5f5f5;
+      animation: slideIn 1.2s ease;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
     }
 
     .icons {
@@ -73,76 +102,169 @@
       flex-wrap: wrap;
       gap: 25px;
       justify-content: center;
-      max-width: 700px;
-      animation: fadeInIcons 1.4s ease-in-out;
+      margin-top: 40px;
     }
 
-    @keyframes fadeInIcons {
-      0% { opacity: 0; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    .icons a {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 18px;
-      border-radius: 50%;
-      color: white;
-      font-size: 1.8rem;
+    .icon-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
     }
 
-    .icons a:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: scale(1.15) rotate(5deg);
-      color: #00ffc3;
-      box-shadow: 0 8px 25px rgba(0,255,195,0.4);
+    .icon-block a {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      width: 65px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none !important;
+      transition: all 0.3s ease;
+    }
+
+    .icon-block a:hover {
+      transform: scale(1.25) rotate(10deg);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .fab.fa-facebook-f:hover { color: #1877F2; }
+    .fab.fa-x-twitter:hover { color: #FFFFFF; }
+    .fab.fa-instagram:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .fab.fa-linkedin-in:hover { color: #0077B5; }
+    .fab.fa-whatsapp:hover { color: #25D366; }
+    .fab.fa-youtube:hover { color: #FF0000; }
+    .fas.fa-envelope:hover {
+      color: #FF8C00;
+      text-shadow: 0 0 5px #FF8C00;
+    }
+
+    /* ✅ Google Icon Gradient Hover */
+    .fab.fa-google {
+      transition: all 0.4s ease;
+    }
+
+    .fab.fa-google:hover {
+      background: conic-gradient(
+        from 45deg,
+        #4285F4 0deg,
+        #4285F4 90deg,
+        #EA4335 90deg,
+        #EA4335 180deg,
+        #FBBC05 180deg,
+        #FBBC05 270deg,
+        #34A853 270deg,
+        #34A853 360deg
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+    }
+
+    .username {
+      margin-top: 6px;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+
+    .bottom-logos {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 60px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .bottom-logos img {
+      height: 60px;
+      filter: drop-shadow(0 0 10px #444);
+      animation: float 4s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .bottom-logos img:hover {
+      transform: scale(1.1) rotate(-5deg);
     }
 
     footer {
       margin-top: 40px;
-      font-size: 0.9rem;
-      color: #ddd;
-      opacity: 0.8;
+      font-size: 0.85rem;
+      color: #bbb;
+      opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     @media(max-width: 600px) {
-      .logo-container img {
-        height: 55px;
-      }
-      h1 {
-        font-size: 1.5rem;
-      }
-      .icons a {
-        font-size: 1.5rem;
-        padding: 15px;
-      }
+      .logo-top img { height: 80px; }
+      .bottom-logos img { height: 45px; }
+      h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
 
-  <div class="logo-container">
-    <img src="vimalpress-logo.png" alt="Vimal Press Logo" />
-    <img src="vprint-logo.png" alt="VPrint Logo" />
+  <!-- Welcome Overlay -->
+  <div class="welcome-overlay">
+    <img src="vimalpress-logo.png" alt="Welcome Logo">
+    <h1>Welcome to Vimal Press</h1>
+    <p>Where Quality is not an Act, it's a Habit</p>
   </div>
 
-  <h1>Connect with Vimal Press</h1>
+  <!-- Top Logo -->
+  <div class="logo-top">
+    <img src="vimalpress-logo.png" alt="Vimal Press Logo">
+  </div>
 
+  <h1>Let's Connect</h1>
+
+  <!-- Social Media Icons -->
   <div class="icons">
-    <a href="https://facebook.com/vimalpressmtr" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://twitter.com/vimalpress" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://instagram.com/vimal.press" target="_blank" title="Instagram - Vimal Press"><i class="fab fa-instagram"></i></a>
-    <a href="https://instagram.com/v.printt" target="_blank" title="Instagram - VPrint"><i class="fab fa-instagram"></i></a>
-    <a href="https://instagram.com/v.honour__" target="_blank" title="Instagram - VHonour"><i class="fab fa-instagram"></i></a>
-    <a href="https://linkedin.com/in/vimalpress" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://wa.me/9084085855" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://youtube.com/vimalpress" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="mailto:vimalpress@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+    <div class="icon-block"><a href="https://facebook.com/vimalpressmtr" target="_blank"><i class="fab fa-facebook-f"></i></a><div class="username">@vimalpressmtr</div></div>
+    <div class="icon-block"><a href="https://x.com/vimalpress" target="_blank"><i class="fab fa-x-twitter"></i></a><div class="username">@vimalpress</div></div>
+    <div class="icon-block"><a href="https://instagram.com/vimal.press" target="_blank"><i class="fab fa-instagram"></i></a><div class="username">@vimal.press</div></div>
+    <div class="icon-block"><a href="https://instagram.com/v.printt" target="_blank"><i class="fab fa-instagram"></i></a><div class="username">@v.printt</div></div>
+    <div class="icon-block"><a href="https://instagram.com/v.honour__" target="_blank"><i class="fab fa-instagram"></i></a><div class="username">@v.honour__</div></div>
+    <div class="icon-block"><a href="https://linkedin.com/in/vimalpress" target="_blank"><i class="fab fa-linkedin-in"></i></a><div class="username">@vimalpress</div></div>
+    <div class="icon-block"><a href="https://wa.me/9368885855" target="_blank"><i class="fab fa-whatsapp"></i></a><div class="username">@9368885855</div></div>
+    <div class="icon-block"><a href="https://youtube.com/vimalpress" target="_blank"><i class="fab fa-youtube"></i></a><div class="username">@vimalpress</div></div>
+    <div class="icon-block"><a href="mailto:vimalpress@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a><div class="username">vimalpress@gmail.com</div></div>
+    <div class="icon-block"><a href="https://vimalpress.com" target="_blank"><i class="fas fa-globe"></i></a><div class="username">vimalpress.com</div></div>
+    <div class="icon-block"><a href="https://www.instagram.com/reel/DLRjeJOPPPP/?igsh=MTRrMHUwbnRhdjh4cg==" target="_blank"><i class="fab fa-google"></i></a><div class="username">Google Reviews</div></div>
   </div>
 
-  <footer>© 2025 Vimal Press | #VPrint #VHonour</footer>
+  <!-- Bottom VPrint Logos -->
+  <div class="bottom-logos">
+    <img src="vprint-logo.png" alt="VPrint Logo">
+    <img src="vprint-logo.png" alt="VPrint Logo">
+  </div>
+
+  <footer>
+    © 2025 Vimal Press | #VPrint #VHonour
+  </footer>
 
 </body>
 </html>
-55
